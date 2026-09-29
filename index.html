@@ -1,0 +1,2009 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ethar Alashri · IT Graduate & AI Enthusiast</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        /* =========================
+           VARIABLES
+        ========================= */
+
+        :root {
+            --yellow: #F9E8A2;
+            --light-blue: #B4E1EB;
+            --mid-blue: #95BDD7;
+            --dark-blue: #78A4CB;
+
+            --bg-color: #f4f7fb;
+
+            --text-main: #1a252f;
+            --text-light: #5a6c7d;
+
+            --white: #ffffff;
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+
+        /* =========================
+           BODY
+        ========================= */
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+
+            background-color: var(--bg-color);
+
+            color: var(--text-main);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--mid-blue);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--dark-blue);
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        nav {
+            position: fixed;
+
+            top: 0;
+            width: 100%;
+
+            background: rgba(255, 255, 255, 0.78);
+
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+
+            border-bottom:
+                1px solid rgba(255, 255, 255, 0.5);
+
+            z-index: 1000;
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 1.2rem 5%;
+        }
+
+
+        .logo {
+            font-size: 1.5rem;
+
+            font-weight: 800;
+
+            color: var(--dark-blue);
+
+            letter-spacing: 2px;
+        }
+
+
+        .logo span {
+            color: #d4c585;
+        }
+
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+        }
+
+
+        .nav-links a {
+            text-decoration: none;
+
+            color: var(--text-main);
+
+            margin-left: 2.2rem;
+
+            font-weight: 600;
+
+            font-size: 0.9rem;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            transition: color 0.3s ease;
+        }
+
+
+        .nav-links a:hover {
+            color: var(--dark-blue);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle at top right,
+                    #ffffff,
+                    var(--bg-color)
+                );
+
+            padding: 7rem 5% 4rem;
+
+            position: relative;
+        }
+
+
+        .hero::before {
+            content: '';
+
+            position: absolute;
+
+            top: 20%;
+            left: 8%;
+
+            width: 300px;
+            height: 300px;
+
+            background: var(--light-blue);
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            opacity: 0.4;
+
+            z-index: 0;
+
+            animation:
+                pulse 6s infinite alternate;
+        }
+
+
+        .hero-content {
+            max-width: 950px;
+
+            width: 100%;
+
+            z-index: 1;
+        }
+
+
+        .hero h1 {
+            font-size: 4.5rem;
+
+            color: var(--dark-blue);
+
+            line-height: 1.1;
+
+            margin-bottom: 1rem;
+
+            font-weight: 800;
+        }
+
+
+        /* =========================
+           TYPING EFFECT
+        ========================= */
+
+        .typing-wrapper {
+            display: inline-block;
+        }
+
+
+        .typing-text {
+            font-size: 2.5rem;
+
+            color: var(--text-light);
+
+            font-weight: 300;
+
+            overflow: hidden;
+
+            border-right: 3px solid var(--yellow);
+
+            white-space: nowrap;
+
+            margin: 0;
+
+            width: 0;
+
+            animation:
+                typing 3.5s steps(40, end) forwards,
+                blink-caret 0.75s step-end infinite;
+        }
+
+
+        @keyframes typing {
+
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent;
+            }
+
+            50% {
+                border-color: var(--yellow);
+            }
+        }
+
+
+        .hero-description {
+            font-size: 1.2rem;
+
+            color: var(--text-light);
+
+            max-width: 650px;
+
+            margin-top: 1.5rem;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .hero-buttons {
+            margin-top: 2.5rem;
+        }
+
+
+        .btn-primary,
+        .btn-secondary {
+            display: inline-block;
+
+            padding: 1rem 2.7rem;
+
+            border-radius: 50px;
+
+            text-decoration: none;
+
+            font-weight: 600;
+
+            letter-spacing: 0.5px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .btn-primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--dark-blue),
+                    var(--mid-blue)
+                );
+
+            color: white;
+
+            box-shadow:
+                0 10px 20px
+                rgba(120, 164, 203, 0.3);
+        }
+
+
+        .btn-primary:hover {
+            transform: translateY(-4px);
+
+            box-shadow:
+                0 15px 25px
+                rgba(120, 164, 203, 0.45);
+        }
+
+
+        .btn-secondary {
+            margin-left: 1rem;
+
+            background: transparent;
+
+            border:
+                2px solid var(--dark-blue);
+
+            color: var(--dark-blue);
+        }
+
+
+        .btn-secondary:hover {
+            background: var(--dark-blue);
+
+            color: white;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 7rem 5%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+        }
+
+
+        .section-title {
+            font-size: 3rem;
+
+            color: var(--dark-blue);
+
+            margin-bottom: 4rem;
+
+            text-align: center;
+        }
+
+
+        .section-title span {
+            color: transparent;
+
+            -webkit-text-stroke:
+                1px var(--dark-blue);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 4rem;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+            font-size: 2rem;
+
+            color: var(--dark-blue);
+
+            margin-bottom: 1.5rem;
+
+            line-height: 1.3;
+        }
+
+
+        .about-text p {
+            font-size: 1.1rem;
+
+            color: var(--text-light);
+
+            margin-bottom: 1.3rem;
+        }
+
+
+        /* =========================
+           TERMINAL
+        ========================= */
+
+        .terminal-box {
+            background: #1e1e1e;
+
+            border-radius: 14px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 40px
+                rgba(0, 0, 0, 0.18);
+
+            color: #d4d4d4;
+
+            font-family:
+                'Courier New',
+                monospace;
+        }
+
+
+        .terminal-header {
+            background: #323233;
+
+            padding: 12px;
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .dot {
+            width: 12px;
+            height: 12px;
+
+            border-radius: 50%;
+        }
+
+
+        .dot.red {
+            background: #ff5f56;
+        }
+
+
+        .dot.yellow {
+            background: #ffbd2e;
+        }
+
+
+        .dot.green {
+            background: #27c93f;
+        }
+
+
+        .terminal-content {
+            padding: 25px;
+
+            line-height: 1.9;
+
+            font-size: 0.9rem;
+        }
+
+
+        .keyword {
+            color: #569cd6;
+        }
+
+
+        .string {
+            color: #ce9178;
+        }
+
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skill-groups {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 2rem;
+        }
+
+
+        .skill-group {
+            background: white;
+
+            padding: 2rem;
+
+            border-radius: 18px;
+
+            box-shadow:
+                0 10px 30px
+                rgba(180, 225, 235, 0.2);
+        }
+
+
+        .skill-group h3 {
+            color: var(--dark-blue);
+
+            margin-bottom: 1.3rem;
+
+            font-size: 1.3rem;
+        }
+
+
+        .skills-grid {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 0.7rem;
+        }
+
+
+        .skill {
+            background: var(--bg-color);
+
+            color: var(--dark-blue);
+
+            border:
+                1px solid var(--light-blue);
+
+            padding:
+                0.55rem 1rem;
+
+            border-radius: 30px;
+
+            font-size: 0.9rem;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================
+           EDUCATION
+        ========================= */
+
+        .education-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 2.5rem;
+        }
+
+
+        .edu-card {
+            background: white;
+
+            border-left:
+                5px solid var(--dark-blue);
+
+            padding: 2.5rem 2rem;
+
+            border-radius:
+                0 15px 15px 0;
+
+            box-shadow:
+                0 10px 30px
+                rgba(180, 225, 235, 0.2);
+
+            transition:
+                transform 0.3s ease;
+        }
+
+
+        .edu-card:hover {
+            transform: translateY(-5px);
+        }
+
+
+        .edu-card.active {
+            border-left-color:
+                var(--yellow);
+        }
+
+
+        .edu-date {
+            font-size: 0.85rem;
+
+            color: var(--mid-blue);
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 0.6rem;
+        }
+
+
+        .edu-card h3 {
+            color: var(--dark-blue);
+
+            font-size: 1.45rem;
+
+            line-height: 1.3;
+
+            margin-bottom: 0.4rem;
+        }
+
+
+        .edu-card h4 {
+            color: var(--text-light);
+
+            font-size: 1rem;
+
+            font-weight: 500;
+
+            margin-bottom: 1.2rem;
+        }
+
+
+        .gpa-badge {
+            display: inline-block;
+
+            background: var(--bg-color);
+
+            color: var(--dark-blue);
+
+            padding:
+                0.4rem 1rem;
+
+            border-radius: 20px;
+
+            font-size: 0.85rem;
+
+            font-weight: 700;
+
+            border:
+                1px solid var(--light-blue);
+        }
+
+
+        .badge-active {
+            background: var(--yellow);
+
+            color: #1a252f;
+
+            border: none;
+        }
+
+
+        .edu-card p {
+            margin-top: 1rem;
+
+            color: var(--text-light);
+        }
+
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 2.5rem;
+        }
+
+
+        .project-card {
+            background: white;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 10px 30px
+                rgba(180, 225, 235, 0.2);
+
+            position: relative;
+
+            transition:
+                all 0.4s ease;
+        }
+
+
+        .project-card.featured {
+            grid-column: span 2;
+        }
+
+
+        .project-card::before {
+            content: '';
+
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 5px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--light-blue),
+                    var(--mid-blue),
+                    var(--dark-blue)
+                );
+
+            transform:
+                scaleX(0);
+
+            transform-origin:
+                left;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        .project-card:hover {
+            transform:
+                translateY(-8px);
+
+            box-shadow:
+                0 20px 40px
+                rgba(120, 164, 203, 0.25);
+        }
+
+
+        .project-card:hover::before {
+            transform:
+                scaleX(1);
+        }
+
+
+        .project-content {
+            padding:
+                2.7rem 2.5rem;
+        }
+
+
+        .project-label {
+            display: inline-block;
+
+            background: var(--yellow);
+
+            color: var(--text-main);
+
+            padding:
+                0.3rem 0.8rem;
+
+            border-radius: 20px;
+
+            font-size: 0.75rem;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 1rem;
+        }
+
+
+        .project-content h3 {
+            font-size: 1.8rem;
+
+            color: var(--dark-blue);
+
+            margin-bottom: 1rem;
+        }
+
+
+        .project-content p {
+            color: var(--text-light);
+
+            font-size: 1rem;
+        }
+
+
+        .project-highlights {
+            margin-top: 1.5rem;
+
+            padding-left: 1.2rem;
+
+            color: var(--text-light);
+        }
+
+
+        .project-highlights li {
+            margin-bottom: 0.5rem;
+        }
+
+
+        .tag-container {
+            display: flex;
+
+            gap: 0.6rem;
+
+            flex-wrap: wrap;
+
+            margin-top: 1.8rem;
+        }
+
+
+        .tag {
+            padding:
+                0.4rem 0.9rem;
+
+            background: var(--bg-color);
+
+            color: var(--dark-blue);
+
+            border:
+                1px solid var(--light-blue);
+
+            border-radius: 30px;
+
+            font-size: 0.8rem;
+
+            font-weight: 600;
+        }
+
+
+        .project-links {
+            margin-top: 1.8rem;
+        }
+
+
+        .project-links a {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 0.5rem;
+
+            text-decoration: none;
+
+            color: var(--dark-blue);
+
+            font-weight: 700;
+
+            transition:
+                color 0.3s ease;
+        }
+
+
+        .project-links a:hover {
+            color: var(--text-main);
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        footer {
+            background:
+                var(--dark-blue);
+
+            padding:
+                5rem 5%;
+
+            text-align: center;
+
+            color: white;
+        }
+
+
+        footer h2 {
+            font-size: 2.5rem;
+
+            margin-bottom: 1.5rem;
+        }
+
+
+        footer p {
+            font-size: 1.1rem;
+
+            color: var(--light-blue);
+
+            margin-bottom: 2.5rem;
+
+            max-width: 650px;
+
+            margin-inline: auto;
+        }
+
+
+        .contact-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 1rem;
+
+            flex-wrap: wrap;
+        }
+
+
+        .contact-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 0.6rem;
+
+            padding:
+                1rem 2.5rem;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            border-radius: 50px;
+
+            font-size: 1rem;
+
+            transition:
+                all 0.3s ease;
+        }
+
+
+        .contact-btn i {
+            font-size: 1.1rem;
+        }
+
+
+        .email-btn {
+        background: transparent;
+        color: white;
+        border: 2px solid var(--yellow);
+        
+        }
+
+        .email-btn:hover {
+        background: var(--yellow);
+        color: var(--dark-blue);
+        transform: translateY(-3px);
+        }
+
+
+        .linkedin-btn {
+            background: transparent;
+
+            color: white;
+
+            border:
+                2px solid var(--yellow);
+        }
+
+
+        .linkedin-btn:hover {
+            background: var(--yellow);
+
+            color: var(--dark-blue);
+
+            transform:
+                translateY(-3px);
+        }
+        .signature {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: var(--text-light);
+    opacity: 0.8;
+}
+
+.signature span {
+    color: var(--yellow);
+    font-size: 1.1rem;
+}
+
+
+        /* =========================
+           ANIMATION
+        ========================= */
+
+        @keyframes pulse {
+
+            0% {
+                transform: scale(1);
+
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: scale(1.2);
+
+                opacity: 0.6;
+            }
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 768px) {
+
+            .nav-links {
+                display: none;
+            }
+
+
+            .hero {
+                text-align: center;
+            }
+
+
+            .hero h1 {
+                font-size: 3.3rem;
+            }
+
+
+            .typing-text {
+                font-size: 1.7rem;
+            }
+
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+
+            .btn-secondary {
+                margin-left: 0.4rem;
+            }
+
+
+            .about-grid,
+            .skill-groups,
+            .education-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .project-card.featured {
+                grid-column: span 1;
+            }
+
+
+            .section-title {
+                font-size: 2.4rem;
+            }
+
+
+            .terminal-content {
+                font-size: 0.75rem;
+
+                overflow-x: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================= -->
+
+    <nav>
+
+        <div class="logo">
+            EA<span>.</span>
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="#about">
+                Profile
+            </a>
+
+            <a href="#skills">
+                Skills
+            </a>
+
+            <a href="#education">
+                Education
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="Ethar_Alashri_CV.pdf" download>
+                Resume
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Ethar Alashri
+            </h1>
+
+
+            <!-- TYPING TEXT -->
+
+            <div class="typing-wrapper">
+
+                <h2 class="typing-text">
+                    IT Graduate · AI Enthusiast
+                </h2>
+
+            </div>
+
+
+            <p class="hero-description">
+
+                IT graduate passionate about Artificial Intelligence
+                and building practical AI-powered solutions using
+                Python, Machine Learning, NLP, and AI agents.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="#projects"
+                    class="btn-primary">
+
+                    View My Work
+
+                </a>
+
+
+                <a
+                    href="#contact"
+                    class="btn-secondary">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text">
+
+                <h3>
+                    From Information Technology
+                    to Artificial Intelligence.
+                </h3>
+
+
+                <p>
+
+                    I'm an Information Technology graduate from
+                    Qassim University with a growing focus on
+                    Artificial Intelligence and Machine Learning.
+
+                </p>
+
+
+                <p>
+
+                    My IT background gave me a strong foundation
+                    in programming, databases, systems, and
+                    problem-solving. I've applied these foundations
+                    to AI-focused projects using Python, PyTorch,
+                    scikit-learn, NLP, and modern AI frameworks.
+
+                </p>
+
+
+                <p>
+
+                    I'm currently developing my skills in Agentic AI,
+                    building systems that combine AI models with
+                    tools, workflows, retrieval, and structured
+                    decision-making.
+
+                </p>
+
+            </div>
+
+
+            <!-- TERMINAL -->
+
+            <div class="terminal-box">
+
+
+                <div class="terminal-header">
+
+                    <div class="dot red"></div>
+
+                    <div class="dot yellow"></div>
+
+                    <div class="dot green"></div>
+
+                </div>
+
+
+                <div class="terminal-content">
+
+                    <span class="keyword">
+                        const
+                    </span>
+
+                    ethAR = {<br>
+
+
+                    &nbsp;&nbsp;degree:
+
+                    <span class="string">
+                        "Information Technology"
+                    </span>,<br>
+
+
+                    &nbsp;&nbsp;focus: [<br>
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <span class="string">
+                        "Artificial Intelligence"
+                    </span>,<br>
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <span class="string">
+                        "Machine Learning"
+                    </span>,<br>
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <span class="string">
+                        "NLP"
+                    </span>,<br>
+
+
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <span class="string">
+                        "Agentic AI"
+                    </span><br>
+
+
+                    &nbsp;&nbsp;],<br>
+
+
+                    &nbsp;&nbsp;goal:
+
+                    <span class="string">
+                        "Build useful AI solutions"
+                    </span><br>
+
+
+                    };
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================= -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+
+        <div class="skill-groups">
+
+
+            <!-- AI -->
+
+            <div class="skill-group">
+
+                <h3>
+                    AI & Machine Learning
+                </h3>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill">
+                        Machine Learning
+                    </div>
+
+                    <div class="skill">
+                        Deep Learning
+                    </div>
+
+                    <div class="skill">
+                        NLP
+                    </div>
+
+                    <div class="skill">
+                        PyTorch
+                    </div>
+
+                    <div class="skill">
+                        Scikit-learn
+                    </div>
+
+                    <div class="skill">
+                        LLMs
+                    </div>
+
+                    <div class="skill">
+                        RAG
+                    </div>
+
+                    <div class="skill">
+                        AI Agents
+                    </div>
+
+                    <div class="skill">
+                        LangChain
+                    </div>
+
+                    <div class="skill">
+                        FAISS
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROGRAMMING -->
+
+            <div class="skill-group">
+
+                <h3>
+                    Programming & Data
+                </h3>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill">
+                        Python
+                    </div>
+
+                    <div class="skill">
+                        SQL
+                    </div>
+
+                    <div class="skill">
+                        Pandas
+                    </div>
+
+                    <div class="skill">
+                        NumPy
+                    </div>
+
+                    <div class="skill">
+                        Matplotlib
+                    </div>
+
+                    <div class="skill">
+                        Power BI
+                    </div>
+
+                    <div class="skill">
+                        Oracle Database
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOOLS -->
+
+            <div class="skill-group">
+
+                <h3>
+                    AI Engineering Tools
+                </h3>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill">
+                        FastAPI
+                    </div>
+
+                    <div class="skill">
+                        Streamlit
+                    </div>
+
+                    <div class="skill">
+                        Docker
+                    </div>
+
+                    <div class="skill">
+                        Git
+                    </div>
+
+                    <div class="skill">
+                        GitHub
+                    </div>
+
+                    <div class="skill">
+                        Hugging Face
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOUNDATIONS -->
+
+            <div class="skill-group">
+
+                <h3>
+                    Core Foundations
+                </h3>
+
+
+                <div class="skills-grid">
+
+                    <div class="skill">
+                        Programming
+                    </div>
+
+                    <div class="skill">
+                        Databases
+                    </div>
+
+                    <div class="skill">
+                        Information Systems
+                    </div>
+
+                    <div class="skill">
+                        Problem Solving
+                    </div>
+
+                    <div class="skill">
+                        Software Testing
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================= -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            Education & <span>Learning</span>
+        </h2>
+
+
+        <div class="education-grid">
+
+
+            <!-- UNIVERSITY -->
+
+            <div class="edu-card">
+
+                <div class="edu-date">
+                    2026
+                </div>
+
+
+                <h3>
+                    Bachelor of Information Technology
+                </h3>
+
+
+                <h4>
+                    Qassim University
+                </h4>
+
+
+                <div class="gpa-badge">
+
+                    🎓 Graduated
+
+                </div>
+
+
+                <p>
+
+                    Built a foundation in programming,
+                    databases, information systems,
+                    software development, and technology.
+
+                </p>
+
+            </div>
+
+
+            <!-- SDA BOOTCAMP -->
+
+            <div class="edu-card active">
+
+                <div class="edu-date">
+                    Aug – Oct 2026 · 7 Weeks
+                </div>
+
+
+                <h3>
+                    Agentic AI Bootcamp
+                </h3>
+
+
+                <h4>
+                    SDA · Saudi Digital Academy
+                </h4>
+
+
+                <div class="gpa-badge badge-active">
+
+                    ⚡ 7-Week Intensive Program
+
+                </div>
+
+
+                <p>
+
+                    An intensive 7-week program focused on
+                    Agentic AI, LLM applications, RAG,
+                    AI agents, multi-agent systems, and
+                    building practical AI solutions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================= -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            Featured <span>Projects</span>
+        </h2>
+
+
+        <div class="projects-grid">
+
+
+            <!-- =====================
+                 AEGISML
+            ====================== -->
+
+            <div class="project-card featured">
+
+                <div class="project-content">
+
+
+                    <div class="project-label">
+                        Agentic AI · Capstone Project
+                    </div>
+
+
+                    <h3>
+                        AegisML
+                    </h3>
+
+
+                    <p>
+
+                        A multi-agent framework designed to audit
+                        machine learning pipelines for potential
+                        security vulnerabilities.
+
+                    </p>
+
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            Analyzes ML pipeline structure and
+                            identifies potential security risks.
+                        </li>
+
+
+                        <li>
+                            Performs controlled vulnerability
+                            testing inside an isolated Docker sandbox.
+                        </li>
+
+
+                        <li>
+                            Produces risk-scored findings and
+                            security recommendations using
+                            NIST-based risk assessment.
+                        </li>
+
+
+                        <li>
+                            Uses guardrails and human authorization
+                            before potentially harmful testing actions.
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tag-container">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            Multi-Agent AI
+                        </span>
+
+                        <span class="tag">
+                            AI Agents
+                        </span>
+
+                        <span class="tag">
+                            Docker
+                        </span>
+
+                        <span class="tag">
+                            AST
+                        </span>
+
+                        <span class="tag">
+                            Pandas
+                        </span>
+
+                        <span class="tag">
+                            NetworkX
+                        </span>
+
+                        <span class="tag">
+                            FastAPI
+                        </span>
+
+                        <span class="tag">
+                            Streamlit
+                        </span>
+
+                        <span class="tag">
+                            NIST
+                        </span>
+
+                    </div>
+
+
+                    <div class="project-links">
+
+                        <a
+                            href="https://github.com/AlsaeedR/AegisML"
+                            target="_blank"
+                            rel="noopener noreferrer">
+
+                            <i class="fa-brands fa-github"></i>
+
+                            View on GitHub →
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 EMPATHYBOT
+            ====================== -->
+
+            <div class="project-card">
+
+                <div class="project-content">
+
+
+                    <div class="project-label">
+                        Graduation Project
+                    </div>
+
+
+                    <h3>
+                        EmpathyBot
+                    </h3>
+
+
+                    <p>
+
+                        An AI-powered emotional support companion
+                        developed as my graduation project. The system
+                        analyzes user-written text and identifies
+                        emotional states to support more personalized
+                        and empathetic interactions.
+
+                    </p>
+
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            NLP-based emotion classification.
+                        </li>
+
+
+                        <li>
+                            Fine-tuned RoBERTa model for
+                            multi-class emotion recognition.
+                        </li>
+
+
+                        <li>
+                            Designed to provide supportive
+                            interactions without diagnosing
+                            users or making medical claims.
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tag-container">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            PyTorch
+                        </span>
+
+                        <span class="tag">
+                            RoBERTa
+                        </span>
+
+                        <span class="tag">
+                            NLP
+                        </span>
+
+                        <span class="tag">
+                            Deep Learning
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================
+                 RESEARCH ANALYZER
+            ====================== -->
+
+            <div class="project-card">
+
+                <div class="project-content">
+
+
+                    <div class="project-label">
+                        AI Application
+                    </div>
+
+
+                    <h3>
+                        Academic Research Analyzer
+                    </h3>
+
+
+                    <p>
+
+                        A conversational RAG application that
+                        analyzes academic papers using semantic
+                        retrieval and language models to provide
+                        grounded answers with relevant source
+                        references.
+
+                    </p>
+
+
+                    <ul class="project-highlights">
+
+                        <li>
+                            Document chunking and embeddings.
+                        </li>
+
+
+                        <li>
+                            Semantic search using FAISS.
+                        </li>
+
+
+                        <li>
+                            Retrieval-augmented responses
+                            using LangChain.
+                        </li>
+
+                    </ul>
+
+
+                    <div class="tag-container">
+
+                        <span class="tag">
+                            Python
+                        </span>
+
+                        <span class="tag">
+                            LangChain
+                        </span>
+
+                        <span class="tag">
+                            RAG
+                        </span>
+
+                        <span class="tag">
+                            FAISS
+                        </span>
+
+                        <span class="tag">
+                            LLMs
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <footer id="contact">
+
+
+        <h2>
+            Let's Build Something Smart
+        </h2>
+
+
+        <p>
+
+            I'm interested in opportunities where I can apply
+            my knowledge of Artificial Intelligence, Machine
+            Learning, and AI-powered applications while
+            continuing to learn and grow in the field.
+
+        </p>
+
+
+        <div class="contact-buttons">
+
+
+            <!-- EMAIL -->
+
+            <a
+                href="mailto:etharalashri@gmail.com"
+                class="contact-btn email-btn">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                Email Me
+
+            </a>
+
+
+            <!-- LINKEDIN -->
+
+            <a
+                href="https://www.linkedin.com/in/ethar-alashri-a5b81a331/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-btn linkedin-btn">
+
+                <i class="fa-brands fa-linkedin-in"></i>
+
+                LinkedIn
+
+            </a>
+
+        </div>
+
+        
+        <div class="signature">
+    Built with <span>♡</span> by Ethar
+</div>
+
+    </footer>
+
+
+</body>
+
+</html>
+
